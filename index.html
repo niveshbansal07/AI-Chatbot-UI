@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Nivesh's Assistant</span>
+                </div>
+                <div class="header-controls">
+                    <button class="history-btn" id="historyBtn" title="Chat History">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <div class="theme-switcher">
+                        <button class="theme-btn" id="themeBtn" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="light">
+                                <i class="fas fa-sun"></i>
+                                <span>Light</span>
+                            </button>
+                            <button class="theme-option" data-theme="dark">
+                                <i class="fas fa-moon"></i>
+                                <span>Dark</span>
+                            </button>
+                            <button class="theme-option" data-theme="system">
+                                <i class="fas fa-desktop"></i>
+                                <span>System</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Hello! Nivesh I'm your AI assistant. How can I help you today?
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        class="message-input" 
+                        placeholder="Type your message here..."
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="input-hint">Press Enter to send, Shift+Enter for new line</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- History Sidebar -->
+        <aside class="history-sidebar" id="historySidebar">
+            <div class="sidebar-header">
+                <h3>Chat History</h3>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be populated here -->
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
